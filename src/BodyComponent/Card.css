@@ -1,0 +1,88 @@
+.Card {
+  height: 300px;
+  width: 430px;
+  background-color: white;
+  border: 4px solid rgb(121, 40, 226);
+  border-radius: 25px;
+  position: relative;
+  box-shadow: -1px 4px 20px -6px rgba(25, 45, 233, 0.6);
+  margin: 20px 5px 20px 20px;
+  padding: 5px ;
+  float: left;
+  display: flex;
+}
+
+.Card:hover{
+  border: 4px solid rgb(255, 136, 0);
+}
+
+.Id {
+  margin: 10px 0px 0 20px;
+  color:rgb(19, 16, 233);
+}
+
+.courseName {
+  color:red;
+  margin-left: 16px;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.courseLink {
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.provider {
+  color: slategrey;
+  margin: 10px 0px 10px 20px;
+}
+
+.university {
+  color: slategrey;
+  margin-left: 15px;
+  position: absolute;
+  padding-top: 30px;
+  justify-content: space-between;
+}
+span{
+  color: black;
+  font-style: italic;
+  font-weight: 700;
+}
+.childParent {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position:absolute;;
+  bottom:5px;
+  left: 20px;
+}
+
+.id {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.date {
+  margin: 10px 0px 0 20px;
+  color:rgb(241, 47, 112);
+  font-size: 15px;
+}
+
+.childParentTitle {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position:absolute;;
+  bottom:25px;
+  left: 20px;
+}
+
+.childParentTitle > h5 {
+  color: gray;
+}
