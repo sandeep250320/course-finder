@@ -56,9 +56,9 @@ span{
   display: flex;
   justify-content: space-between;
   width: 90%;
-  position:absolute;;
-  margin-bottom:5px;
-  padding-left: 20px;
+ position:absolute;;
+ bottom:5px;
+ left: 20px;
 }
 
 .id {
