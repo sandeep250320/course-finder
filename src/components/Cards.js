@@ -60,15 +60,15 @@ const Cards = () => {
      var replacedDate = filteDateString.replace('nd','').replace('rd','').replace('th','')
      var filterDate = new Date(replacedDate)
      const stringDate = convert(filterDate)
-     if(dateToSearch != 'Invalid Date'){
-         if( filterDate != 'Invalid Date' ){
+     if(dateToSearch !== 'Invalid Date'){
+         if( filterDate !== 'Invalid Date' ){
              if(stringDate === newDateToSearch){
-                 return el
+                 return el;
              } 
          }
      }
      else{
-         return el
+         return el;
      }
      
      
@@ -95,7 +95,7 @@ const Cards = () => {
     );
     })
     const noCourse = ()=>{
-      if(dataSearch == ''){
+      if(dataSearch === ''){
           return <h3 className="container" >No course found !!</h3>
       }
   }
