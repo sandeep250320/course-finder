@@ -85,9 +85,9 @@ const Cards = () => {
           courseId={props["Course Id"]}
           courseName={props["Course Name"].slice(0,55)}
           provider={props["Provider"]}
-          university={props["Universities/Institutions"].slice(0,45)}
-          parentSub={props["Parent Subject"].slice(0,25)}
-          childSub={props["Child Subject"].slice(0,25)}
+          university={props["Universities/Institutions"].slice(0,40)}
+          parentSub={props["Parent Subject"].slice(0,20)}
+          childSub={props["Child Subject"].slice(0,20)}
           url={props["Url"]}
           nextSess={props["Next Session Date"]}
         />
