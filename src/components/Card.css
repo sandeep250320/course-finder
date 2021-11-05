@@ -1,6 +1,6 @@
 .Cards {
-  height: 250px ;
-  width: 350px ;
+  height: 290px ;
+  width: 360px ;
   border: 4px solid rgb(121, 40, 226);
   border-radius: 25px;
   position: relative;
@@ -16,7 +16,7 @@
   background-color: antiquewhite
 }
 .Id {
-  margin: 8px 0px 0 16px ;
+  margin: 8px 0px 0 8px ;
   color:rgb(19, 16, 233) ;
   font-size: small;
   font: bold;
@@ -29,7 +29,7 @@
 
 .courseName {
   color:red;
-  margin-left: 16px;
+  margin-left: 8px;
   font-weight: bold;
   font-size: medium;
 }
@@ -44,16 +44,16 @@
 
 .provider {
   color: black;
-  margin: 10px 0px 10px 20px;
+  margin: 10px 0px 10px 10px;
   font-size: small;
   font-weight: bold;
 }
 
 .university {
   color: black;
-  margin-left: 15px;
+  margin-left: 10px;
   position: absolute;
-  padding-top: 15px;
+  padding-top: 10px;
   justify-content: space-between;
   font-size: small;
 }
@@ -68,7 +68,7 @@ span{
   width: 90%;
   position:absolute;
   bottom:10px;
-  left: 20px;
+  left: 10px;
   padding-bottom: 8px;
   font-size: small;
 }
@@ -78,7 +78,7 @@ span{
 }
 
 .date {
-  margin:10px 0 0 220px; 
+  margin:10px 0 0 200px; 
   color:rgb(28, 31, 187);
   font-size: 13px;
   box-sizing: border-box;
@@ -90,8 +90,8 @@ span{
   justify-content: space-between;
   width: 90%;
   position:absolute;;
-  bottom:39px;
-  left: 20px;
+  bottom:30px;
+  left: 10px;
   color: black;
 }
 .childParentTitle>span{
