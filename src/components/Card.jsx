@@ -16,7 +16,7 @@ function CardOne({courseId, courseName, provider, university, parentSub, childSu
         </div>
         <div className="courseName">
         <span>Course name</span>
-        <code>  <h5 >{courseName}</h5> </code>
+        <code>  <h6 >{courseName}</h6> </code>
           </div>
           <div className="university">
           <span>Universities/Institutions</span>
