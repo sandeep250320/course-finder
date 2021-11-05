@@ -41,9 +41,6 @@ function Navbar() {
     }
     var myString = '2nd Apr, 2021'
     var newString = myString.replace('nd','').replace('rd','')
-
-    var date2 = new Date(newString);
-    var date3 = new Date("04-11-2021");
   
     return (
       <div>
