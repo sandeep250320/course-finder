@@ -43,36 +43,51 @@ function Navbar() {
     var newString = myString.replace('nd','').replace('rd','')
   
     return (
-      <div>
-          
-          <nav className="searchbar navbar-expand-lg navbar-light ">
-                  <div className=" _searchbar">
-                      
-                    
-                      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span className="navbar-toggler-icon"></span>
-                      </button>
-                      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li className="nav-item">
-                          </li>
-                          
-                      </ul>
-                      <form className="d-flex" onSubmit={searchHandler}>
-                          <input className="form-control me-3" type="search" placeholder="Course" value={search} onChange={searchWords} aria-label="Search"/>
-                          <input className="form-control me-3" type="search" placeholder="Child subject" value={searchchild} onChange={searchChildHandler} aria-label="Search"/>
-                          <input className="form-control me-3" type="date" placeholder="Date" value={datePicker} onChange={handleDate} aria-label="Search"/>
-                          <button className="btn btn-outline-primary" type="submit">Search</button>
-                          <button className="btn btn-outline-danger mx-3" type="reset" onClick={resetHandlar} >Reset</button>
-                      </form>
-
-                      </div>
-                     
-                  </div>
-                  
-          </nav>
-          
-      </div>
+         <div>
+      <nav className="navbar navbar-expand-lg navbar-expand-md my-3 navbar-collapse-sm navbar-light ">
+        <div className="container  p-2">
+          <div className="navbar-collapse collapse  d-flex justify-content-around show" id="navbarSupportedContent">
+            
+            <form className=" d-flex " onSubmit={searchHandler}>
+              <input
+                className="form-control rounded-pill me-2 mx-auto marg"
+                type="search"
+                placeholder="Course"
+                value={search}
+                onChange={searchWords}
+                aria-label="Search"
+              />
+              <input
+                className="form-control rounded-pill mx-auto me-2 marg"
+                type="search"
+                placeholder="Child subject"
+                value={searchchild}
+                onChange={searchChildHandler}
+                aria-label="Search"
+              />
+              <input
+                className="form-control rounded-pill me-2 marg"
+                type="date"
+                placeholder="Date"
+                value={datePicker}
+                onChange={handleDate}
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-primary" type="submit">
+                Search
+              </button>
+              <button
+                className="btn btn-outline-danger mx-3"
+                type="reset"
+                onClick={resetHandlar}
+              >
+                Reset
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
   )
 }
 
