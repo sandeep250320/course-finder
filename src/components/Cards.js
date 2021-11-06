@@ -120,7 +120,7 @@ const Cards = () => {
           <div className='mypage' >
           <ReactPaginate
               breakLabel="..."
-              nextLabel="next >"
+              nextLabel=">>"
      
               pageRangeDisplayed={1}
               pageCount={pageCounted}
@@ -135,7 +135,7 @@ const Cards = () => {
               breakClassName={'page-item'}
               breakLinkClassName={'page-link'}
               activeClassName={'active'}
-              previousLabel="< previous"
+              previousLabel="<<"
           />
           </div>
       </div>
