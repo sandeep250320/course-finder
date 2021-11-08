@@ -12,6 +12,7 @@ const Cards = () => {
   const courseName = ['Course Name']
   const childSub = ['Child Subject']
   const [courses,setNewcourse] = useState([])
+  const [isLoading, setLoading] = useState(true);
   const cardPerPage = 6
   const pagesVisited = ctx.pageNumber * cardPerPage;
 
@@ -22,7 +23,7 @@ const Cards = () => {
         for(var i =0; i<600;i++){
              dataList.push(request.data[i])
         }
-        
+        setLoading(false);
         setNewcourse(dataList)
 
     }
@@ -81,6 +82,19 @@ const Cards = () => {
  const displayCard = dataSearch.slice(pagesVisited, pagesVisited + cardPerPage).map((props)=>{
   return (
     <div className="Cards">
+    <>
+        {isLoading && (
+          <div class="loader">
+          <center>
+          <h1>Loading Please wait...</h1>
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            </center>
+          </div>
+        )}
         <CardOne
           courseId={props["Course Id"]}
           courseName={props["Course Name"].slice(0,55)}
@@ -92,6 +106,7 @@ const Cards = () => {
           nextSess={props["Next Session Date"]}
         />
     </div>
+ </>
     );
     })
     const noCourse = ()=>{
