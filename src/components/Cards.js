@@ -97,7 +97,7 @@ const Cards = () => {
     );
     })
     const setLoader= () => {
-    if(setLoading == 'true'){
+    if(setLoading(true)){
     return
           <div class="loader">
           <center>
