@@ -92,6 +92,7 @@ const Cards = () => {
           childSub={props["Child Subject"].slice(0,20)}
           url={props["Url"]}
           nextSess={props["Next Session Date"]}
+          />
     </div>
     );
     }) 
