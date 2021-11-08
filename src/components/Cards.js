@@ -93,7 +93,6 @@ const Cards = () => {
           url={props["Url"]}
           nextSess={props["Next Session Date"]}
     </div>
- </>
     );
     }) 
     
