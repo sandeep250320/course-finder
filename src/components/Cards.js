@@ -127,11 +127,12 @@ const Cards = () => {
             </center>
           </div>
         )}
-          {noCourse() }
+         
           <div className='row ' >
               {displayCard}
               
           </div>
+          {noCourse() }
           <div className='mypage' >
           <ReactPaginate
               breakLabel="..."
