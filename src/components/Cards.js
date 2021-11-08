@@ -95,22 +95,7 @@ const Cards = () => {
     </div>
  </>
     );
-    })
-    const setLoader= () => {
-    if(setLoading(true)){
-    return
-          <div class="loader">
-          <center>
-          <h1>Loading Please wait...</h1>
-            <div class="dots">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            </center>
-          </div>
-    }
-    }
+    }) 
     
     const noCourse = ()=>{
       if(dataSearch == ''){
@@ -130,7 +115,18 @@ const Cards = () => {
       <div>
           
           <center><h5 className="headcard" >Course found : {numRows}</h5></center>
-            {setLoader() }
+            {isLoading && (
+          <div class="loader">
+          <center>
+          <h1>Loading Please wait...</h1>
+            <div class="dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            </center>
+          </div>
+        )}
           {noCourse() }
           <div className='row ' >
               {displayCard}
