@@ -82,8 +82,23 @@ const Cards = () => {
  const displayCard = dataSearch.slice(pagesVisited, pagesVisited + cardPerPage).map((props)=>{
   return (
     <div className="Cards">
-    <>
-        {isLoading && (
+       
+        <CardOne
+          courseId={props["Course Id"]}
+          courseName={props["Course Name"].slice(0,55)}
+          provider={props["Provider"]}
+          university={props["Universities/Institutions"].slice(0,40)}
+          parentSub={props["Parent Subject"].slice(0,20)}
+          childSub={props["Child Subject"].slice(0,20)}
+          url={props["Url"]}
+          nextSess={props["Next Session Date"]}
+    </div>
+ </>
+    );
+    })
+    const setLoader= () => {
+    if(setLoading == 'true'){
+    return <> 
           <div class="loader">
           <center>
           <h1>Loading Please wait...</h1>
@@ -94,21 +109,10 @@ const Cards = () => {
             </div>
             </center>
           </div>
-        )}
-        <CardOne
-          courseId={props["Course Id"]}
-          courseName={props["Course Name"].slice(0,55)}
-          provider={props["Provider"]}
-          university={props["Universities/Institutions"].slice(0,40)}
-          parentSub={props["Parent Subject"].slice(0,20)}
-          childSub={props["Child Subject"].slice(0,20)}
-          url={props["Url"]}
-          nextSess={props["Next Session Date"]}
-        />
-    </div>
- </>
-    );
-    })
+      </>
+    }
+    }
+    
     const noCourse = ()=>{
       if(dataSearch == ''){
           return <h3 className="container" >No course found !!</h3>
