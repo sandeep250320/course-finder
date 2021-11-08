@@ -98,7 +98,7 @@ const Cards = () => {
     })
     const setLoader= () => {
     if(setLoading == 'true'){
-    return <> 
+    return
           <div class="loader">
           <center>
           <h1>Loading Please wait...</h1>
@@ -109,7 +109,6 @@ const Cards = () => {
             </div>
             </center>
           </div>
-      </>
     }
     }
     
@@ -131,6 +130,7 @@ const Cards = () => {
       <div>
           
           <center><h5 className="headcard" >Course found : {numRows}</h5></center>
+            {setLoader() }
           {noCourse() }
           <div className='row ' >
               {displayCard}
