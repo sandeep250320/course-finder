@@ -144,3 +144,18 @@ font-weight: 900;
     }
   }
   
+.graph{
+  width:50%;
+  padding: 20px 40px;
+  background-color: white;
+  border: 3px solid blue;
+  flex: auto;
+  margin: auto;
+  border-radius: 20px;
+}
+.drop {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
