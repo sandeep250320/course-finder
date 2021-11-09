@@ -7,6 +7,7 @@ export const SearchContextProvider = (props)=>{
     const [searchname,setSearchname]=useState('')
     const [searchchild,setSearchchild]=useState('')
     const [searchDate,setSearchDate] = useState('')
+    const [self , setSelfplaced] = useState (true)
     const [pageNumber,setPageNumber] = useState(0)
 return(
     <SearchContext.Provider
@@ -18,7 +19,9 @@ return(
             searchDate,
             setSearchDate,
             pageNumber,
-            setPageNumber
+            setPageNumber,
+            self,
+            setSelfplaced
         }}
     >
         {props.children}
