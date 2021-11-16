@@ -175,10 +175,10 @@ const Cards = () => {
   };
 
   return (
-    <div>
-      <center>
+   <div>
+      { dataSearch.length!==0 ? <center>
         <h5 className="headcard">Course found : {numRows}</h5>
-      </center>
+      </center> : ""}
       {isLoading && (
         <div class="loader">
           <center>
@@ -194,7 +194,7 @@ const Cards = () => {
 
       <div className="row ">{displayCard}</div>
       {noCourse()}
-      <div className="mypage">
+      { dataSearch.length!==0 ? <div className="mypage">
         <ReactPaginate
           breakLabel="..."
           nextLabel=">>"
@@ -213,9 +213,9 @@ const Cards = () => {
           activeClassName={"active"}
           previousLabel="<<"
         />
-      </div>
+      </div> : " "}
 
-      <div className="drop">
+      { dataSearch.length!==0 ?  <div className="drop">
         <DropdownButton
           alignRight
           title="select chart"
@@ -224,6 +224,7 @@ const Cards = () => {
           className="pb-4 m-5"
           size="lg"
         >
+        
           <Dropdown.Item eventKey="parentGraph">parent Subject</Dropdown.Item>
           <Dropdown.Item eventKey="universityGraph">
             university
@@ -236,7 +237,8 @@ const Cards = () => {
               counted={parentCount}
               parentList={uniqueParent}
             />
-          )}
+          )
+}
         </div>
         <div>
           {universityGraph && (
@@ -247,7 +249,7 @@ const Cards = () => {
             />
           )}
         </div>
-      </div>
+      </div> : " "}
     </div>
   );
 };
