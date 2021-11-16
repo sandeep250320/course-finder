@@ -34,7 +34,6 @@ function Navbar() {
     setSearch("");
     setSearchChild("");
     setDatePicker("");
-    setchecked('false');
   };
 
   const handleDate = (e) => {
