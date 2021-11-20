@@ -1,34 +1,42 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DropdownButton, Dropdown, ButtonGroup } from "react-bootstrap";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 import SearchContext from "./searchContext";
 import "./Card.css";
 import CardOne from "./Card";
 import ReactPaginate from "react-paginate";
 import Barchart from "./barchart";
-
-import axios from "./axios.js";
+import { useSelector, useDispatch } from "react-redux";
+import { getCards } from "../action";
 
 const Cards = () => {
-  const ctx = useContext(SearchContext);
+    const ctx = useContext(SearchContext);
   const courseName = ["Course Name"];
   const childSub = ["Child Subject"];
-  const [courses, setNewcourse] = useState([]);
-  const [isLoading, setLoading] = useState(true);
   const cardPerPage = 6;
   const pagesVisited = ctx.pageNumber * cardPerPage;
 
+
+  const dispatch = useDispatch();
+  const cardList = useSelector((state) => state.reducer.dataList);
+  console.log(cardList);
+  const loading = useSelector((state) => state.reducer.loading);
+  console.log(loading);
   useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get();
-      const dataList = [];
-      for (var i = 0; i < 500; i++) {
-        dataList.push(request.data[i]);
-      }
-      setLoading(false);
-      setNewcourse(dataList);
-    }
-    fetchData();
-  }, []);
+    dispatch(getCards());
+  }, [dispatch]);
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const request = await axios.get();
+  //     const dataList[]
+  //     for (var i = 0; i < 500; i++) {
+  //       dataList.push(request.data[i]);
+  //     }
+  //     setLoading(false);
+  //     setNewcourse(dataList);
+  //   }
+  //   fetchData();
+  // }, []);
 
   const searchData = ctx.searchname;
   const childsearch = ctx.searchchild;
@@ -45,7 +53,7 @@ const Cards = () => {
   }
   const newDateToSearch = convert(dateToSearch);
 
-  let dataSearch = courses
+  let dataSearch = cardList
     .filter((item) => {
       return Object.keys(item).some((key) => {
         return courseName.includes(key)
@@ -67,7 +75,7 @@ const Cards = () => {
       });
     })
     .filter(function (el) {
-      var filteDateString = el["Next Session Date"];
+      var filteDateString = el["Next Session Date"]
       var replacedDate = filteDateString
         .replace("nd", "")
         .replace("rd", "")
@@ -93,7 +101,6 @@ const Cards = () => {
         }
       } else return el;
     });
-
   const numRows = dataSearch.length;
 
   const pageParent = [];
@@ -126,7 +133,7 @@ const Cards = () => {
   const aCount = new Map(
     [...new Set(pageParent)].map((x) => [
       x,
-      pageParent.filter((y) => y === x).length,
+      pageParent.filter((y) => y == x).length,
     ])
   );
   const parentCount = [];
@@ -149,8 +156,12 @@ const Cards = () => {
   }
 
   const noCourse = () => {
-    if (dataSearch == "") {
-      return <h3 className="container">No course found !!</h3>;
+    if (dataSearch == "" && loading==false) {
+      return (
+        <h2 className="container">
+          <center>No course found !!</center>
+        </h2>
+      );
     }
   };
 
@@ -164,8 +175,9 @@ const Cards = () => {
   // GRAPH DROPDOWN
   const [parentGraph, setParentGraph] = useState(false);
   const [universityGraph, setUniversityGraph] = useState(false);
+
   const handleSelect = (e) => {
-    if (e === "parentGraph") {
+    if (e == "parentGraph") {
       setParentGraph(true);
       setUniversityGraph(false);
     } else {
@@ -175,81 +187,87 @@ const Cards = () => {
   };
 
   return (
-   <div>
-      { dataSearch.length!==0 ? <center>
-        <h5 className="headcard">Course found : {numRows}</h5>
-      </center> : ""}
-      {isLoading && (
+    <div>
+      {dataSearch.length != 0 ? (
+        <center>
+          <h5 className="headcard">Course found : {numRows}</h5>
+        </center>
+      ) : ("")}
+      
+      { loading && (
         <div class="loader">
           <center>
             <h1>Loading Please wait...</h1>
-            <div class="dots">
+            <div className="dots">
               <div></div>
               <div></div>
               <div></div>
             </div>
           </center>
-        </div>
-      )}
+      </div>) }
 
       <div className="row ">{displayCard}</div>
-      {noCourse()}
-      { dataSearch.length!==0 ? <div className="mypage">
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel=">>"
-          pageRangeDisplayed={1}
-          pageCount={pageCounted}
-          onPageChange={pageHandler}
-          containerClassName={"pagination justify-content-center mt-4 mb-4"}
-          pageClassName={"page-item"}
-          pageLinkClassName={"page-link"}
-          previousClassName={"page-item"}
-          previousLinkClassName={"page-link"}
-          nextClassName={"page-item"}
-          nextLinkClassName={"page-link"}
-          breakClassName={"page-item"}
-          breakLinkClassName={"page-link"}
-          activeClassName={"active"}
-          previousLabel="<<"
-        />
-      </div> : " "}
+      {noCourse()}      
+      {dataSearch.length !== 0 ? (
+        <div className="mypage">
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel=">>"
+            pageRangeDisplayed={1}
+            pageCount={pageCounted}
+            onPageChange={pageHandler}
+            containerClassName={"pagination justify-content-center mt-4 mb-4"}
+            pageClassName={"page-item"}
+            pageLinkClassName={"page-link"}
+            previousClassName={"page-item"}
+            previousLinkClassName={"page-link"}
+            nextClassName={"page-item"}
+            nextLinkClassName={"page-link"}
+            breakClassName={"page-item"}
+            breakLinkClassName={"page-link"}
+            activeClassName={"active"}
+            previousLabel="<<"
+          />
+        </div>
+      ) : (
+        " "
+      )}
 
-      { dataSearch.length!==0 ?  <div className="drop">
-        <DropdownButton
-          alignRight
-          title="select chart"
-          id="dropdown-menu-align-right"
-          onSelect={handleSelect}
-          className="pb-4 m-5"
-          size="lg"
-        >
-        
-          <Dropdown.Item eventKey="parentGraph">parent Subject</Dropdown.Item>
-          <Dropdown.Item eventKey="universityGraph">
-            university
-          </Dropdown.Item>
-        </DropdownButton>
-        <div>
-          {parentGraph && (
-            <Barchart
-              name={"Parent sub count"}
-              counted={parentCount}
-              parentList={uniqueParent}
-            />
-          )
-}
+      {dataSearch.length !== 0 ? (
+        <div className="drop">
+          <DropdownButton
+            alignRight
+            title="select chart"
+            id="dropdown-menu-align-right"
+            onSelect={handleSelect}
+            className="pb-4 m-5"
+            size="lg"
+          >
+            <Dropdown.Item eventKey="parentGraph">parent Subject</Dropdown.Item>
+            <Dropdown.Item eventKey="universityGraph">university</Dropdown.Item>
+          </DropdownButton>
+          <div>
+            {parentGraph && (
+              <Barchart
+                name={"Parent sub count"}
+                counted={parentCount}
+                parentList={uniqueParent}
+              />
+            )}
+          </div>
+          <div>
+            {universityGraph && (
+              <Barchart
+                name={"University count"}
+                counted={universityCount}
+                parentList={uniqueUniversity}
+              />
+            )}
+          </div>
         </div>
-        <div>
-          {universityGraph && (
-            <Barchart
-              name={"University count"}
-              counted={universityCount}
-              parentList={uniqueUniversity}
-            />
-          )}
-        </div>
-      </div> : " "}
+      ) : (
+        " "
+      )}
     </div>
   );
 };
