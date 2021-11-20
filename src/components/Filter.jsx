@@ -40,9 +40,9 @@ function Navbar() {
     e.preventDefault();
     setDatePicker(e.target.value);
   };
-  const selfPlacedHandler = (e)=> {
+  const selfPacedHandler = (e)=> {
     setchecked(e.target.checked);
-    ctx.setSelfplaced(checked);
+    ctx.setSelfpaced(checked);
   }
 
   return (
@@ -82,13 +82,13 @@ function Navbar() {
                 <input
                   className="form-check-input  mx-auto me-2 marg"
                   type="checkbox"
-                  placeholder="Self placed"
+                  placeholder="self paced"
                   checked={checked}
-                  onChange={selfPlacedHandler}
-                  aria-label="checkbox"
+                  onChange={selfPacedHandler}
+                  aria-label="self paced"
                 />
-                <label class="form-check-label" for="flexCheckDefault">
-                  Self placed
+                <label className="form-check-label" for="flexCheckDefault">
+                  Self paced
                 </label>
               </div>
 
