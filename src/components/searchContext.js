@@ -7,7 +7,7 @@ export const SearchContextProvider = (props)=>{
     const [searchname,setSearchname]=useState('')
     const [searchchild,setSearchchild]=useState('')
     const [searchDate,setSearchDate] = useState('')
-    const [self , setSelfplaced] = useState (true)
+    const [self , setSelfpaced] = useState (true)
     const [pageNumber,setPageNumber] = useState(0)
 return(
     <SearchContext.Provider
@@ -21,7 +21,7 @@ return(
             pageNumber,
             setPageNumber,
             self,
-            setSelfplaced
+            setSelfpaced
         }}
     >
         {props.children}
