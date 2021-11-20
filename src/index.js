@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { SearchContextProvider } from './components/searchContext';
+import {Provider} from "react-redux"
+import store from "./store";
 
 
 ReactDOM.render(
-  <React.StrictMode>
     <SearchContextProvider>
+      <Provider store={store}>
       <App />
-    </SearchContextProvider>
-  </React.StrictMode>,
+      </Provider>
+    </SearchContextProvider>,
   document.getElementById('root')
 );
-
-
-
