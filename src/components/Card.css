@@ -11,6 +11,9 @@
   background-color: white;
   float: left;
 }
+.row{
+  justify-content: center;
+}
 .Cards:hover{
   border: 2px solid rgb(255, 136, 0) ;
   background-color: antiquewhite
