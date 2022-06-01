@@ -7,7 +7,7 @@ try {
     const res =  await axios.get('https://nut-case.s3.amazonaws.com/coursessc.json')
     dispatch( {
         type: GET_CARDS,
-        payload : res.data
+        payload : res.data.slice(0,4000)
     })
 }
 
