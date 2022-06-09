@@ -29,7 +29,7 @@ const Cards = () => {
   //   async function fetchData() {
   //     const request = await axios.get();
   //     const dataList[]
-  //     for (var i = 0; i < 4000; i++) {
+  //     for (var i = 0; i < 500; i++) {
   //       dataList.push(request.data[i]);
   //     }
   //     setLoading(false);
