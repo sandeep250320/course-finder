@@ -12,7 +12,7 @@ const Cards = () => {
     const ctx = useContext(SearchContext);
   const courseName = ["Course Name"];
   const childSub = ["Child Subject"];
-  const cardPerPage = 6;
+  const cardPerPage = 12;
   const pagesVisited = ctx.pageNumber * cardPerPage;
 
 
@@ -29,7 +29,7 @@ const Cards = () => {
   //   async function fetchData() {
   //     const request = await axios.get();
   //     const dataList[]
-  //     for (var i = 0; i < 500; i++) {
+  //     for (var i = 0; i < 4000; i++) {
   //       dataList.push(request.data[i]);
   //     }
   //     setLoading(false);
