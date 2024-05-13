@@ -1,13 +1,15 @@
 import { GET_CARDS,CARDS_ERROR } from "./actionTypes";
 import axios from 'axios'
+import dummydata from '../components/Sdata'
 
 export const getCards = () =>async dispatch=>{
 
 try {
-    const res =  await axios.get('https://nut-case.s3.amazonaws.com/coursessc.json')
+    const res =  dummydata;
+    console.log("res",res);
     dispatch( {
         type: GET_CARDS,
-        payload : res.data.slice(0,500)
+        payload : res
     })
 }
 

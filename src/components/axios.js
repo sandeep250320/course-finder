@@ -1,7 +1,8 @@
 import axios from "axios";
+import dummydata from './Sdata.jsx'
 
 const instance = axios.create({
-  baseURL: "https://nut-case.s3.amazonaws.com/coursessc.json",
+  baseURL: dummydata,
 });
 
 export default instance;
