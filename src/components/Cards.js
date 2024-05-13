@@ -197,7 +197,7 @@ const Cards = () => {
       { loading && (
         <div class="loader">
           <center>
-            <h1>Loading Please wait...</h1>
+            <h1>Loading Please wait</h1>
             <div className="dots">
               <div></div>
               <div></div>
