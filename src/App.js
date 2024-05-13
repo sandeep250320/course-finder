@@ -7,8 +7,27 @@ import Header from "./components/Header";
 const App = () => {
  
   return (<>
-  <Header/>
-   <Cards/>
+
+ 
+<Header/>
+  <div class="sphere">
+  
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+</div>
+  {/* <div class="tetrahedron">
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+  </div> */}
+ 
+  <Cards/>
    </>
 );
 }

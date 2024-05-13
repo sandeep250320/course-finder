@@ -25,6 +25,7 @@ function Navbar() {
     ctx.setSearchchild(searchchild);
     ctx.setSearchDate(datePicker);
     ctx.setPageNumber(0);
+    console.log("search button clicked")
   };
 
   const resetHandlar = () => {
@@ -34,6 +35,7 @@ function Navbar() {
     setSearch("");
     setSearchChild("");
     setDatePicker("");
+    console.log("reset button clicked")
   };
 
   const handleDate = (e) => {
@@ -88,19 +90,19 @@ function Navbar() {
                   aria-label="self paced"
                 />
                 <label className="form-check-label" for="flexCheckDefault">
-                  Self paced
+                Self paced
                 </label>
               </div>
 
-              <button className="btn btn-outline-primary" type="submit">
-                Search
+              <button className="form-control btn-outline-primary mx-auto" type="submit">
+              <b>Search</b>
               </button>
               <button
-                className="btn btn-outline-danger mx-3"
+                className="form-control btn-outline-danger mx-2"
                 type="reset"
                 onClick={resetHandlar}
               >
-                Reset
+                <b>Reset</b>
               </button>
             </form>
           </div>
